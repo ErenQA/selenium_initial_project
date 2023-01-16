@@ -13,5 +13,21 @@ public class HeaderItems {
         WebDriver driver = Driver.getDriver();
         driver.navigate().to("https://automationexercise.com/");
 
+
+        driver.navigate().to("https://automationexercise.com/");
+
+        List<WebElement> headerItems =driver.findElements(By.cssSelector(" ul[class='nav navbar-nav']>li"));
+
+        String[] text = {"Home", "Products", "Cart", "Signup",  "Login", "Test Cases", "API Testing", "Video Tutorials", "Contact us"};
+
+        for (int i = 0; i < headerItems.size(); i++) {
+            System.out.println(headerItems.get(i).getText());
+            System.out.println(headerItems.get(i).getText().equals(text[i]));
+            System.out.println(headerItems.get(i).isDisplayed());
+            System.out.println(headerItems.get(i).isEnabled());
+        }
+
+
+        Driver.quitDriver();
     }
 }

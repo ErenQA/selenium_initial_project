@@ -5,16 +5,18 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import utils.Driver;
 
-public class LogoValidation {
+public class ValidateSiteFooter {
 
     public static void main(String[] args) {
+
 
         WebDriver driver = Driver.getDriver();
         driver.navigate().to("https://automationexercise.com/");
 
-        WebElement logoValidation = driver.findElement(By.cssSelector("img[src='/static/images/home/logo.png']"));
+        WebElement footerText = driver.findElement(By.cssSelector("p[class='pull-left']"));
+        System.out.println(footerText.isDisplayed());
 
-        System.out.println(logoValidation.isDisplayed());
+
 
         Driver.quitDriver();
     }
